@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bring My Mom Home — Free Alevtina Soboleva</title>
+<meta name="description" content="Alevtina Soboleva, 59, an asylum seeker from Sunnyvale, California with no criminal record, has been in ICE detention since July 20, 2026 — moved through three facilities in under three days, now sick, while the immigration court system has no record of her case." />
+<meta property="og:title" content="Bring My Mom Home — Free Alevtina Soboleva" />
+<meta property="og:description" content="Alevtina Soboleva, 59, an asylum seeker from Sunnyvale, CA, has been in ICE detention since July 20, 2026 — sick, moved through three facilities in three days, with no record of her case in immigration court." />
+<meta property="og:url" content="https://bringmymomhome.com" />
+<meta property="og:type" content="website" />
+<meta name="theme-color" content="#101B2A" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #F6F1E7;
+    --paper-deep: #EDE5D4;
+    --ink: #1E2530;
+    --night: #101B2A;
+    --night-deep: #0B131E;
+    --lamp: #E9A83C;
+    --lamp-soft: rgba(233, 168, 60, 0.16);
+    --slate: #5A6474;
+    --mist: rgba(246, 241, 231, 0.72);
+    --mist-strong: #F1EBDF;
+    --line-ink: rgba(30, 37, 48, 0.16);
+    --line-light: rgba(246, 241, 231, 0.18);
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --max: 1000px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+
+  body {
+    font-family: var(--sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--lamp);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .skip-link {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    background: var(--lamp);
+    color: var(--night-deep);
+    padding: 0.6rem 1rem;
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    z-index: 100;
+  }
+  .skip-link:focus { left: 0.75rem; top: 0.75rem; }
+
+  .wrap { max-width: var(--max); margin: 0 auto; }
+  .band { padding: clamp(4rem, 9vw, 6.5rem) 1.5rem; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 1.1rem;
+  }
+  .paper-band .eyebrow { color: var(--slate); }
+  .night-band .eyebrow { color: var(--lamp); }
+
+  h2 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(1.7rem, 3.6vw, 2.4rem);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.6rem;
+    max-width: 24ch;
+  }
+
+  .night-band { background: var(--night); color: var(--mist); }
+  .night-band h2 { color: var(--mist-strong); }
+
+  /* ---------- Header ---------- */
+  .site-head {
+    background: var(--night);
+    border-bottom: 1px solid var(--line-light);
+  }
+  .site-head .wrap {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    padding: 1.1rem 1.5rem;
+  }
+  .brand {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--mist-strong);
+    text-decoration: none;
+  }
+  .brand .dot { color: var(--lamp); font-style: normal; }
+  .site-nav { display: flex; flex-wrap: wrap; gap: 1.1rem; }
+  .site-nav a {
+    font-family: var(--mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mist);
+    text-decoration: none;
+    padding: 0.2rem 0;
+    border-bottom: 1px solid transparent;
+  }
+  .site-nav a:hover { color: var(--lamp); border-bottom-color: var(--lamp); }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    background:
+      radial-gradient(ellipse 55rem 30rem at 78% -10%, rgba(233, 168, 60, 0.09), transparent 60%),
+      var(--night);
+    color: var(--mist);
+    padding: clamp(4.5rem, 11vw, 8rem) 1.5rem clamp(4rem, 9vw, 6.5rem);
+  }
+  .hero .eyebrow { color: var(--mist); opacity: 0.75; }
+
+  .daycount {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 0.4rem 0 1.8rem;
+    padding: 0.55rem 1rem 0.55rem 0.85rem;
+    border: 1px solid var(--line-light);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .lamp {
+    width: 11px; height: 11px;
+    border-radius: 50%;
+    background: var(--lamp);
+    box-shadow: 0 0 14px 3px rgba(233, 168, 60, 0.55);
+    flex-shrink: 0;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .lamp { animation: glow 3.2s ease-in-out infinite; }
+    @keyframes glow {
+      0%, 100% { box-shadow: 0 0 14px 3px rgba(233, 168, 60, 0.55); }
+      50%      { box-shadow: 0 0 22px 6px rgba(233, 168, 60, 0.8); }
+    }
+  }
+  .daycount .num {
+    font-family: var(--mono);
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--lamp);
+    letter-spacing: 0.04em;
+  }
+  .daycount .label {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--mist);
+  }
+
+  .hero h1 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: clamp(2.3rem, 6vw, 4rem);
+    line-height: 1.12;
+    letter-spacing: -0.015em;
+    color: var(--mist-strong);
+    max-width: 17ch;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--lamp);
+  }
+  .hero .lede {
+    max-width: 58ch;
+    margin-top: 1.6rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .hero .actions { margin-top: 2.4rem; display: flex; flex-wrap: wrap; gap: 0.9rem; }
+
+  .btn {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0.85rem 1.4rem;
+    border-radius: 6px;
+    border: 1px solid transparent;
+  }
+  .btn-primary { background: var(--lamp); color: var(--night-deep); font-weight: 600; }
+  .btn-primary:hover { background: #F0B650; }
+  .btn-ghost { border-color: var(--line-light); color: var(--mist-strong); }
+  .btn-ghost:hover { border-color: var(--lamp); color: var(--lamp); }
+
+  /* ---------- Story ---------- */
+  .story-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+  .story-prose p {
+    font-family: var(--serif);
+    font-size: 1.14rem;
+    line-height: 1.75;
+    margin-bottom: 1.2rem;
+    max-width: 62ch;
+  }
+  .story-prose .openline {
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
+  .story-prose q { font-style: italic; }
+
+  .photo-slot {
+    aspect-ratio: 4 / 5;
+    border: 2px dashed var(--line-ink);
+    border-radius: 10px;
+    background: var(--paper-deep);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--slate);
+  }
+  .photo-slot .frame-note {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .fact-ledger {
+    margin-top: 1.4rem;
+    border-top: 1px solid var(--line-ink);
+  }
+  .fact-ledger div {
+    display: grid;
+    grid-template-columns: 9.5rem 1fr;
+    gap: 1rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px solid var(--line-ink);
+  }
+  .fact-ledger dt {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--slate);
+    padding-top: 0.2rem;
+  }
+  .fact-ledger dd { font-size: 0.92rem; }
+
+  /* ---------- Timeline ---------- */
+  .timeline { list-style: none; margin-top: 2.5rem; position: relative; max-width: 46rem; }
+  .timeline::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    bottom: 28px;
+    width: 2px;
+    background: var(--line-light);
+  }
+  .timeline li {
+    position: relative;
+    padding: 0 0 2.2rem 2.2rem;
+  }
+  .timeline li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 12px; height: 12px;
+    border-radius: 50%;
+    background: var(--night);
+    border: 2px solid var(--mist);
+  }
+  .timeline .t-date {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--lamp);
+  }
+  .timeline .t-place {
+    display: block;
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    color: var(--mist-strong);
+    margin: 0.15rem 0 0.35rem;
+  }
+  .timeline .t-text { font-size: 0.96rem; max-width: 56ch; }
+  .timeline .t-text q { font-style: italic; color: var(--mist-strong); }
+
+  .timeline li.home { padding-bottom: 0; }
+  .timeline li.home::before {
+    background: transparent;
+    border: 2px dashed var(--lamp);
+    box-shadow: 0 0 12px 2px rgba(233, 168, 60, 0.35);
+  }
+  .timeline li.home .t-place { color: var(--lamp); }
+  .timeline li.home .t-text em { color: var(--mist-strong); font-style: italic; }
+
+  /* ---------- In their words ---------- */
+  .pairs { margin-top: 2.5rem; border-top: 1px solid var(--line-ink); }
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 3rem;
+    padding: 1.8rem 0;
+    border-bottom: 1px solid var(--line-ink);
+  }
+  .pair .said-label, .pair .fact-label {
+    font-family: var(--mono);
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .pair .said-label { color: var(--slate); }
+  .pair .fact-label { color: #A4551E; }
+  .pair blockquote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.35rem;
+    line-height: 1.4;
+    color: var(--ink);
+  }
+  .pair .attribution {
+    display: block;
+    font-family: var(--mono);
+    font-style: normal;
+    font-size: 0.72rem;
+    color: var(--slate);
+    margin-top: 0.6rem;
+  }
+  .pair .fact { font-size: 0.98rem; max-width: 44ch; }
+
+  .pullquote {
+    margin: 3.5rem auto 0;
+    max-width: 42rem;
+    text-align: center;
+  }
+  .pullquote blockquote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
+    line-height: 1.45;
+  }
+  .pullquote .attribution {
+    display: block;
+    margin-top: 1rem;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    color: var(--slate);
+  }
+
+  .family-quote {
+    margin: 3rem auto 0;
+    max-width: 46rem;
+    background: var(--paper-deep);
+    border-left: 3px solid var(--lamp);
+    border-radius: 0 10px 10px 0;
+    padding: 1.8rem 2rem;
+  }
+  .family-quote blockquote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  .family-quote .attribution {
+    display: block;
+    margin-top: 0.9rem;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    color: var(--slate);
+  }
+
+  /* ---------- Current concerns ---------- */
+  .concern-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.3rem;
+    margin-top: 2.2rem;
+  }
+  .concern {
+    background: var(--paper);
+    border: 1px solid var(--line-ink);
+    border-radius: 10px;
+    padding: 1.6rem 1.7rem;
+  }
+  .concern h3 {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #A4551E;
+    margin-bottom: 0.7rem;
+  }
+  .concern p { font-size: 0.95rem; }
+  .concern p q { font-style: italic; }
+  .band-tint { background: var(--paper-deep); }
+
+  /* ---------- Asks ---------- */
+  .asks { margin-top: 2.2rem; max-width: 46rem; counter-reset: ask; list-style: none; }
+  .asks li {
+    counter-increment: ask;
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1.2rem;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--line-light);
+    align-items: baseline;
+  }
+  .asks li::before {
+    content: counter(ask, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--lamp);
+  }
+  .asks li p { font-size: 1.02rem; color: var(--mist-strong); }
+
+  /* ---------- Video ---------- */
+  .video-slot {
+    margin-top: 2.2rem;
+    aspect-ratio: 16 / 9;
+    border: 2px dashed var(--line-ink);
+    border-radius: 12px;
+    background: var(--paper-deep);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 2rem;
+  }
+  .play-mark {
+    width: 66px; height: 66px;
+    border-radius: 50%;
+    border: 2px solid var(--ink);
+    display: grid;
+    place-items: center;
+    opacity: 0.75;
+  }
+  .play-mark svg { margin-left: 4px; }
+  .video-slot .v-title {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+  }
+  .video-slot .v-note {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+  .video-minis {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.3rem;
+    margin-top: 1.3rem;
+  }
+  .video-mini {
+    aspect-ratio: 16 / 9;
+    border: 1.5px dashed var(--line-ink);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--slate);
+  }
+
+  /* ---------- Help & press ---------- */
+  .help-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.2rem;
+  }
+  .help-card {
+    border-radius: 12px;
+    padding: 2rem;
+  }
+  .help-card h3 {
+    font-family: var(--serif);
+    font-weight: 500;
+    font-size: 1.45rem;
+    margin-bottom: 0.9rem;
+  }
+  .help-card p { font-size: 0.96rem; margin-bottom: 1rem; }
+  .help-everyone {
+    background: var(--lamp-soft);
+    border: 1px solid rgba(233, 168, 60, 0.5);
+  }
+  .help-press {
+    background: var(--night);
+    color: var(--mist);
+  }
+  .help-press h3 { color: var(--mist-strong); }
+  .contact-line {
+    font-family: var(--mono);
+    font-size: 0.85rem;
+    line-height: 2;
+  }
+  .contact-line a { color: inherit; text-decoration-color: rgba(233, 168, 60, 0.6); }
+  .help-press .contact-line a:hover { color: var(--lamp); }
+  .help-card .btn { margin-top: 0.6rem; }
+  .btn-ink { background: var(--ink); color: var(--paper); font-weight: 600; }
+  .btn-ink:hover { background: #2B3442; }
+  .fineprint {
+    margin-top: 1.2rem;
+    font-size: 0.8rem;
+    color: var(--slate);
+  }
+  .help-press .fineprint { color: var(--mist); opacity: 0.8; }
+
+  /* ---------- Footer ---------- */
+  .site-foot {
+    background: var(--night-deep);
+    color: var(--mist);
+    padding: 3rem 1.5rem;
+  }
+  .site-foot .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5rem 3rem;
+  }
+  .site-foot p {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    line-height: 1.9;
+    max-width: 46ch;
+  }
+  .site-foot a { text-decoration-color: rgba(233, 168, 60, 0.5); }
+  .site-foot a:hover { color: var(--lamp); }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 760px) {
+    .story-grid, .concern-grid, .help-grid, .video-minis { grid-template-columns: 1fr; }
+    .pair { grid-template-columns: 1fr; gap: 1rem; }
+    .photo-slot { max-width: 22rem; }
+    .fact-ledger div { grid-template-columns: 1fr; gap: 0.15rem; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#story">Skip to her story</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top">bringmymomhome<span class="dot">.</span>com</a>
+    <nav class="site-nav" aria-label="Site">
+      <a href="#story">Her story</a>
+      <a href="#timeline">What happened</a>
+      <a href="#words">In their words</a>
+      <a href="#video">Watch</a>
+      <a href="#help">How to help</a>
+      <a href="#press">Press</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="wrap">
+      <p class="eyebrow">Sunnyvale, California &middot; A-Number A240031600</p>
+      <p class="daycount">
+        <span class="lamp" aria-hidden="true"></span>
+        <span class="num">Day <span id="day-num">8</span></span>
+        <span class="label">in ICE detention &middot; since July 20, 2026</span>
+      </p>
+      <h1 id="hero-title">My mother did everything right.<br /><em>Bring her home.</em></h1>
+      <p class="lede">
+        Alevtina Soboleva, 59 — an asylum seeker from Sunnyvale, California, with no criminal
+        record — was detained at the Buffalo airport on July&nbsp;20 and moved through three
+        facilities in under three days. She is sick, has had no confidential call with her
+        attorney, and her case still does not appear in the immigration court system — so her
+        bond request cannot even be filed.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#story">Read her story</a>
+        <a class="btn btn-ghost" href="#press">Press &amp; interviews</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HER STORY ============ -->
+  <section class="band paper-band" id="story" aria-labelledby="story-title">
+    <div class="wrap">
+      <p class="eyebrow">Who she is</p>
+      <h2 id="story-title">Her story</h2>
+      <div class="story-grid">
+        <div class="story-prose">
+          <p class="openline">
+            My mother, Alevtina Soboleva, is 59 years old. She came to the United States
+            lawfully in October 2021 and applied for political asylum in April 2022. That
+            application has been pending ever since — and she has been fully compliant at
+            every step.
+          </p>
+          <p>
+            She built a quiet, careful life in Sunnyvale, California. She holds a valid work
+            permit, a California REAL&nbsp;ID, and active medical insurance. Since 2023 she has
+            been an ESL student at Mission College in Santa Clara, learning English one class
+            at a time. She has no criminal record of any kind — no arrests, no charges, no
+            convictions.
+          </p>
+          <p>
+            She lives with me — her daughter, Daria, a lawful permanent resident and Head
+            Research Scientist at Cerebras Systems. Our home is her home, and I am prepared to
+            take custody of her the moment she is released.
+          </p>
+          <p>
+            On July 20, she was stopped at the Buffalo airport before her flight home by three
+            plain-clothes officers who called it <q>a document check.</q> No documents were
+            requested. She has not been home since.
+          </p>
+        </div>
+        <aside>
+          <!-- PHOTO: replace this placeholder div with <img src="alevtina.jpg" alt="Alevtina Soboleva"> -->
+          <div class="photo-slot" role="img" aria-label="Placeholder for a photo of Alevtina Soboleva">
+            <span class="frame-note">Photo of Alevtina</span>
+            <span class="frame-note" style="opacity:.6">Replace this box with her picture</span>
+          </div>
+          <dl class="fact-ledger">
+            <div><dt>A-Number</dt><dd>A240031600</dd></div>
+            <div><dt>Entered U.S.</dt><dd>October 2021, lawfully</dd></div>
+            <div><dt>Asylum filed</dt><dd>April 2022 — pending ever since</dd></div>
+            <div><dt>Work permit</dt><dd>Valid Employment Authorization Document</dd></div>
+            <div><dt>Identification</dt><dd>California REAL ID driver's license</dd></div>
+            <div><dt>Student</dt><dd>Mission College ESL, Santa Clara, since 2023</dd></div>
+            <div><dt>Criminal record</dt><dd>None — no arrests, charges, or convictions</dd></div>
+          </dl>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ TIMELINE ============ -->
+  <section class="band night-band" id="timeline" aria-labelledby="timeline-title">
+    <div class="wrap">
+      <p class="eyebrow">What happened</p>
+      <h2 id="timeline-title">Seven days. Three facilities. No court record.</h2>
+      <ol class="timeline">
+        <li>
+          <span class="t-date">July 20</span>
+          <span class="t-place">Buffalo, New York</span>
+          <p class="t-text">
+            Detained at the airport before her flight home by three plain-clothes officers who
+            called it <q>a document check.</q> No documents were requested. The family was told
+            she would stay in Buffalo <q>a couple of days</q> and could then transfer to
+            California — that there would be no handcuffs, and that mother and daughter would
+            be able to talk.
+          </p>
+        </li>
+        <li>
+          <span class="t-date">July 21</span>
+          <span class="t-place">Mahoning County Jail, Ohio</span>
+          <p class="t-text">
+            Moved overnight. The family learned of the transfer only from ICE's online
+            locator. Staff took the family's number and promised a call <q>in a few
+            hours.</q> None was permitted.
+          </p>
+        </li>
+        <li>
+          <span class="t-date">July 22</span>
+          <span class="t-place">Basile, Louisiana</span>
+          <p class="t-text">
+            Moved again, by air, to the South Louisiana ICE Processing Center — her third
+            facility in under three days. Her attorney entered an appearance (Form G-28).
+          </p>
+        </li>
+        <li>
+          <span class="t-date">July 23</span>
+          <span class="t-place">Staged for a removal flight</span>
+          <p class="t-text">
+            She waited half a day at an airport before being returned to Basile. In a written
+            email, a facility official told her attorney she <q>was deported</q> — while ICE's
+            own locator showed her in custody at Basile. The office of Rep. Ro Khanna (CA-17)
+            engages.
+          </p>
+        </li>
+        <li>
+          <span class="t-date">July 24</span>
+          <span class="t-place">First phone call</span>
+          <p class="t-text">
+            Four days after her detention, her first call with her daughter. Congressional
+            staff confirm in writing that she appears on ICE's locator while no record of her
+            case exists in the immigration court's public system.
+          </p>
+        </li>
+        <li>
+          <span class="t-date">July 25</span>
+          <span class="t-place">First video contact</span>
+          <p class="t-text">
+            She is visibly ill — a fever with no medication, no warm clothing against the
+            facility's cold, and no glasses, which she needs to read forms or use the phone
+            system.
+          </p>
+        </li>
+        <li>
+          <span class="t-date">July 26</span>
+          <span class="t-place">Locked out of court</span>
+          <p class="t-text">
+            Her bond motion is ready but cannot be filed: six days after her detention, her
+            case still does not appear in the immigration court system. She has had no
+            confidential call with her attorney.
+          </p>
+        </li>
+        <li class="home">
+          <span class="t-date">The last stop</span>
+          <span class="t-place">Sunnyvale, California — home</span>
+          <p class="t-text"><em>Not yet.</em></p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ IN THEIR WORDS ============ -->
+  <section class="band paper-band" id="words" aria-labelledby="words-title">
+    <div class="wrap">
+      <p class="eyebrow">In their words</p>
+      <h2 id="words-title">What they said — and what happened</h2>
+      <div class="pairs">
+        <div class="pair">
+          <div>
+            <span class="said-label">What officials said</span>
+            <blockquote>&ldquo;A document check.&rdquo;
+              <span class="attribution">— Officers at the Buffalo airport, July 20</span>
+            </blockquote>
+          </div>
+          <div>
+            <span class="fact-label">What happened</span>
+            <p class="fact">No documents were ever requested. She was taken into custody before her flight home.</p>
+          </div>
+        </div>
+        <div class="pair">
+          <div>
+            <span class="said-label">What officials said</span>
+            <blockquote>&ldquo;A couple of days&rdquo; in Buffalo, then a transfer to California.
+              <span class="attribution">— What the family was told, July 20</span>
+            </blockquote>
+          </div>
+          <div>
+            <span class="fact-label">What happened</span>
+            <p class="fact">Overnight to a county jail in Ohio. Then, by air, to Louisiana — roughly 2,000 miles from home.</p>
+          </div>
+        </div>
+        <div class="pair">
+          <div>
+            <span class="said-label">What officials said</span>
+            <blockquote>A call to the family <em>&ldquo;in a few hours.&rdquo;</em>
+              <span class="attribution">— Jail staff, July 21</span>
+            </blockquote>
+          </div>
+          <div>
+            <span class="fact-label">What happened</span>
+            <p class="fact">No call was permitted. Her first phone call home came four days after she was detained.</p>
+          </div>
+        </div>
+        <div class="pair">
+          <div>
+            <span class="said-label">What officials said</span>
+            <blockquote>She &ldquo;was deported.&rdquo;
+              <span class="attribution">— A facility official, in a written email to her attorney, July 23</span>
+            </blockquote>
+          </div>
+          <div>
+            <span class="fact-label">What happened</span>
+            <p class="fact">ICE's own online locator showed her in custody at Basile, Louisiana, the entire time.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="pullquote">
+        <blockquote>
+          A windowless cell &ldquo;the size of a small bathroom&rdquo; — where she suffered
+          panic attacks, in handcuffs and chains that officers declined to loosen.
+        </blockquote>
+        <span class="attribution">Alevtina's own account, from her calls of July 24–25</span>
+      </div>
+
+      <!-- DRAFT QUOTE: written for Daria to review — replace the text below with her exact words before publishing -->
+      <div class="family-quote">
+        <blockquote>
+          My mother followed every rule this country gave her. She has spent a week being
+          moved, chained, and hidden from the court that is supposed to hear her. All we are
+          asking is that the system see her — and send her home.
+        </blockquote>
+        <span class="attribution">— Daria Soboleva, her daughter</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CURRENT CONCERNS ============ -->
+  <section class="band paper-band band-tint" id="now" aria-labelledby="now-title">
+    <div class="wrap">
+      <p class="eyebrow">Current concerns</p>
+      <h2 id="now-title">What she is facing right now</h2>
+      <div class="concern-grid">
+        <article class="concern">
+          <h3>Her firsthand account</h3>
+          <p>
+            In her calls of July 24–25, she described being held for hours in vehicles and
+            aircraft with restroom access and drinking water refused — at one point forced to
+            urinate on herself — and being unable to eat for her first three days in custody.
+          </p>
+        </article>
+        <article class="concern">
+          <h3>Medical neglect</h3>
+          <p>
+            She is sick with a fever and a severe sore throat and is receiving no medication.
+            Warm clothing and painkillers given to her by other detainees were confiscated by
+            staff. She is without her glasses, which she needs to read forms or use the phone
+            system.
+          </p>
+        </article>
+        <article class="concern">
+          <h3>No attorney access</h3>
+          <p>
+            Six days into her detention, she has had no confidential consultation with her
+            legal counsel.
+          </p>
+        </article>
+        <article class="concern">
+          <h3>Locked out of court</h3>
+          <p>
+            Her case does not appear in the immigration court system, so a bond request cannot
+            be filed — while the risk of another no-notice transfer, and of deportation to
+            Russia, the very danger underlying her asylum claim, remains.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ THE ASKS ============ -->
+  <section class="band night-band" id="asks" aria-labelledby="asks-title">
+    <div class="wrap">
+      <p class="eyebrow">The family asks ICE to</p>
+      <h2 id="asks-title">Five things — none of them extraordinary</h2>
+      <ol class="asks">
+        <li><p>Provide immediate medical evaluation and treatment, and basic necessities: medication, warm clothing, and her glasses.</p></li>
+        <li><p>Ensure uninterrupted, confidential access between Ms. Soboleva and her legal counsel.</p></li>
+        <li><p>Enter her case into the immigration court system so her bond request can be heard — without further transfers.</p></li>
+        <li><p>Transfer her to California, where her attorney, family, and support network are located.</p></li>
+        <li><p>Exercise prosecutorial discretion to release her into her daughter's custody while her asylum case proceeds.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ VIDEO ============ -->
+  <section class="band paper-band" id="video" aria-labelledby="video-title">
+    <div class="wrap">
+      <p class="eyebrow">Watch</p>
+      <h2 id="video-title">The first interview</h2>
+      <!--
+        WHEN THE VIDEO IS READY:
+        Replace the .video-slot div below with your embed, e.g.
+
+        <iframe style="width:100%; aspect-ratio:16/9; border:0; border-radius:12px; margin-top:2.2rem"
+                src="https://www.youtube.com/embed/VIDEO_ID"
+                title="First interview with Daria Soboleva"
+                allowfullscreen></iframe>
+      -->
+      <div class="video-slot">
+        <span class="play-mark" aria-hidden="true">
+          <svg width="22" height="26" viewBox="0 0 22 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M21 13 1 25V1l20 12Z" fill="currentColor"/>
+          </svg>
+        </span>
+        <span class="v-title">First interview with Daria Soboleva</span>
+        <span class="v-note">Coming soon — this space is reserved</span>
+      </div>
+      <div class="video-minis">
+        <div class="video-mini">Reserved &middot; statement from legal counsel</div>
+        <div class="video-mini">Reserved &middot; voices from her community</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ HOW TO HELP / PRESS ============ -->
+  <section class="band paper-band" id="help" aria-labelledby="help-title">
+    <div class="wrap">
+      <p class="eyebrow">How to help</p>
+      <h2 id="help-title">Two ways to stand with her</h2>
+      <div class="help-grid">
+        <div class="help-card help-everyone">
+          <h3>For everyone</h3>
+          <p>
+            Share this page. And if you know Alevtina — as a neighbor, a classmate, a fellow
+            student at Mission College, or a member of her community — a short letter of
+            support strengthens her file.
+          </p>
+          <!-- CONFIRM: outreach address below is a placeholder until the real inbox is set up -->
+          <p class="contact-line">
+            <a href="mailto:outreach@bringmymomhome.com?subject=Support%20for%20Alevtina%20Soboleva">outreach@bringmymomhome.com</a>
+          </p>
+          <a class="btn btn-ink" href="mailto:outreach@bringmymomhome.com?subject=Support%20for%20Alevtina%20Soboleva">Send a letter of support</a>
+          <p class="fineprint">Letters are collected by her family and shared with her legal team.</p>
+        </div>
+        <div class="help-card help-press" id="press">
+          <h3>For press</h3>
+          <p>
+            Interviews with Daria Soboleva and legal counsel are available. Photos, verified
+            documents, and letters of community support are available on request.
+          </p>
+          <p class="contact-line">
+            Danni McInnis<br />
+            <a href="tel:+17822349543">+1 (782) 234-9543</a><br />
+            <a href="mailto:mediafordanni@duck.com?subject=Press%20inquiry%3A%20Alevtina%20Soboleva">mediafordanni@duck.com</a>
+          </p>
+          <a class="btn btn-primary" href="mailto:mediafordanni@duck.com?subject=Press%20inquiry%3A%20Alevtina%20Soboleva">Contact the media line</a>
+          <p class="fineprint">Facts on this page are drawn from the family's fact sheet, updated July 26, 2026.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p>
+      Maintained by the family of Alevtina Soboleva (A-Number A240031600).<br />
+      Last updated July 27, 2026.
+    </p>
+    <p>
+      <a href="#story">Her story</a> &middot; <a href="#timeline">What happened</a> &middot;
+      <a href="#help">How to help</a> &middot; <a href="#press">Press</a><br />
+      The light stays on until she is home.
+    </p>
+  </div>
+</footer>
+
+<script>
+  // Live "Day N" counter — July 20, 2026 is Day 1.
+  (function () {
+    var start = new Date(2026, 6, 20);
+    var now = new Date();
+    var a = new Date(start.getFullYear(), start.getMonth(), start.getDate());
+    var b = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var day = Math.floor((b - a) / 86400000) + 1;
+    if (day > 0) {
+      var el = document.getElementById("day-num");
+      if (el) el.textContent = day;
+    }
+  })();
+</script>
+</body>
+</html>
