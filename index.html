@@ -235,25 +235,20 @@
   }
   .story-prose q { font-style: italic; }
 
-  .photo-slot {
-    aspect-ratio: 4 / 5;
-    border: 2px dashed var(--line-ink);
+  .photo-fig { margin: 0; }
+  .photo-fig img {
+    display: block;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
-    background: var(--paper-deep);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 0.6rem;
-    text-align: center;
-    padding: 1.5rem;
-    color: var(--slate);
+    border: 1px solid var(--line-ink);
   }
-  .photo-slot .frame-note {
+  .photo-fig figcaption {
+    margin-top: 0.7rem;
     font-family: var(--mono);
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    font-size: 0.74rem;
+    line-height: 1.6;
+    color: var(--slate);
   }
 
   .fact-ledger {
@@ -582,7 +577,7 @@
   @media (max-width: 760px) {
     .story-grid, .concern-grid, .help-grid, .video-minis { grid-template-columns: 1fr; }
     .pair { grid-template-columns: 1fr; gap: 1rem; }
-    .photo-slot { max-width: 22rem; }
+    .photo-fig { max-width: 22rem; }
     .fact-ledger div { grid-template-columns: 1fr; gap: 0.15rem; }
   }
 </style>
@@ -662,11 +657,10 @@
           </p>
         </div>
         <aside>
-          <!-- PHOTO: replace this placeholder div with <img src="alevtina.jpg" alt="Alevtina Soboleva"> -->
-          <div class="photo-slot" role="img" aria-label="Placeholder for a photo of Alevtina Soboleva">
-            <span class="frame-note">Photo of Alevtina</span>
-            <span class="frame-note" style="opacity:.6">Replace this box with her picture</span>
-          </div>
+          <figure class="photo-fig">
+            <img src="images/mom.jpg" alt="Alevtina Soboleva with her daughter, Daria" />
+            <figcaption>Alevtina Soboleva, left, with her daughter, Daria.</figcaption>
+          </figure>
           <dl class="fact-ledger">
             <div><dt>A-Number</dt><dd>A240031600</dd></div>
             <div><dt>Entered U.S.</dt><dd>October 2021, lawfully</dd></div>
@@ -937,7 +931,6 @@
             student at Mission College, or a member of her community — a short letter of
             support strengthens her file.
           </p>
-          <!-- CONFIRM: outreach address below is a placeholder until the real inbox is set up -->
           <p class="contact-line">
             <a href="mailto:outreach@bringmymomhome.com?subject=Support%20for%20Alevtina%20Soboleva">outreach@bringmymomhome.com</a>
           </p>
@@ -953,9 +946,9 @@
           <p class="contact-line">
             Danni McInnis<br />
             <a href="tel:+17822349543">+1 (782) 234-9543</a><br />
-            <a href="mailto:mediafordanni@duck.com?subject=Press%20inquiry%3A%20Alevtina%20Soboleva">mediafordanni@duck.com</a>
+            <a href="mailto:media@bringmymomhome.com?subject=Press%20inquiry%3A%20Alevtina%20Soboleva">media@bringmymomhome.com</a>
           </p>
-          <a class="btn btn-primary" href="mailto:mediafordanni@duck.com?subject=Press%20inquiry%3A%20Alevtina%20Soboleva">Contact the media line</a>
+          <a class="btn btn-primary" href="mailto:media@bringmymomhome.com?subject=Press%20inquiry%3A%20Alevtina%20Soboleva">Contact the media line</a>
           <p class="fineprint">Facts on this page are drawn from the family's fact sheet, updated July 26, 2026.</p>
         </div>
       </div>
