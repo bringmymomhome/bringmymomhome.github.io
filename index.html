@@ -11,7 +11,9 @@
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://bringmymomhome.com/images/mom.jpg" />
 <meta property="og:image:alt" content="Alevtina Soboleva with her daughter, Daria" />
-<meta name="twitter:card" content="https://bringmymomhome.com/images/mom.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Bring My Mom Home — Free Alevtina Soboleva" />
+<meta name="twitter:description" content="Alevtina Soboleva, 59, an asylum seeker from Sunnyvale, CA, has been in ICE detention since July 20, 2026 — sick, moved through three facilities in three days, with no record of her case in immigration court." />
 <meta name="twitter:image" content="https://bringmymomhome.com/images/mom.jpg" />
 <meta name="theme-color" content="#101B2A" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -546,7 +548,7 @@
   }
   .contact-line a { color: inherit; text-decoration-color: rgba(233, 168, 60, 0.6); }
   .help-press .contact-line a:hover { color: var(--lamp); }
-  .help-card .btn { margin-top: 0.6rem; }
+  .help-card .btn { margin-top: 0.6rem; margin-right: 0.6rem; }
   .btn-ink { background: var(--ink); color: var(--paper); font-weight: 600; }
   .btn-ink:hover { background: #2B3442; }
   .fineprint {
@@ -611,7 +613,7 @@
       <p class="eyebrow">Sunnyvale, California &middot; A-Number A240031600</p>
       <p class="daycount">
         <span class="lamp" aria-hidden="true"></span>
-        <span class="num">Day <span id="day-num">8</span></span>
+        <span class="num">Day <span class="js-day" id="day-num">9</span></span>
         <span class="label">in ICE detention &middot; since July 20, 2026</span>
       </p>
       <h1 id="hero-title">My mother did everything right.<br /><em>Bring her home.</em></h1>
@@ -683,7 +685,7 @@
   <section class="band night-band" id="timeline" aria-labelledby="timeline-title">
     <div class="wrap">
       <p class="eyebrow">What happened</p>
-      <h2 id="timeline-title">Seven days. Three facilities. No court record.</h2>
+      <h2 id="timeline-title"><span class="js-day">9</span> days. Three facilities. No court record.</h2>
       <ol class="timeline">
         <li>
           <span class="t-date">July 20</span>
@@ -823,7 +825,6 @@
         <span class="attribution">Alevtina's own account, from her calls of July 24–25</span>
       </div>
 
-      <!-- DRAFT QUOTE: written for Daria to review — replace the text below with her exact words before publishing -->
       <div class="family-quote">
         <blockquote>
           My mother followed every rule this country gave her. She has spent a week being
@@ -944,16 +945,18 @@
         <div class="help-card help-press" id="press">
           <h3>For press</h3>
           <p>
-            Interviews with Daria Soboleva and legal counsel are available. Photos, verified
-            documents, and letters of community support are available on request.
+            Interviews with Daria Soboleva and legal counsel are available. The press kit
+            includes the press release, fact sheet, detailed timeline, quote sheet,
+            backgrounder, and nine approved family photographs with captions.
           </p>
           <p class="contact-line">
             Danni McInnis<br />
-            <a href="tel:+1-209-224-9295">+1 (209) 244-9295</a><br />
+            <a href="tel:+1-209-224-9295">+1 (209) 224-9295</a><br />
             <a href="mailto:media@bringmymomhome.com?subject=Press%20inquiry%3A%20Alevtina%20Soboleva">media@bringmymomhome.com</a>
           </p>
-          <a class="btn btn-primary" href="mailto:media@bringmymomhome.com?subject=Press%20inquiry%3A%20Alevtina%20Soboleva">Contact the media line</a>
-          <p class="fineprint">Facts on this page are drawn from the family's fact sheet, updated July 26, 2026.</p>
+          <a class="btn btn-primary" href="https://drive.google.com/file/d/1feqX4rIfSfByoKQhwmuKjqApv3LSmHXI/view?usp=sharing" target="_blank" rel="noopener">Download press kit</a>
+          <a class="btn btn-ghost" href="mailto:media@bringmymomhome.com?subject=Press%20inquiry%3A%20Alevtina%20Soboleva">Contact the media line</a>
+          <p class="fineprint">Facts on this page are drawn from the family's fact sheet, updated July 28, 2026.</p>
         </div>
       </div>
     </div>
@@ -965,7 +968,7 @@
   <div class="wrap">
     <p>
       Maintained by the family of Alevtina Soboleva (A-Number A240031600).<br />
-      Last updated July 27, 2026.
+      Last updated July 28, 2026.
     </p>
     <p>
       <a href="#story">Her story</a> &middot; <a href="#timeline">What happened</a> &middot;
@@ -977,6 +980,7 @@
 
 <script>
   // Live "Day N" counter — July 20, 2026 is Day 1.
+  // Updates the hero badge and every element with class "js-day".
   (function () {
     var start = new Date(2026, 6, 20);
     var now = new Date();
@@ -984,8 +988,8 @@
     var b = new Date(now.getFullYear(), now.getMonth(), now.getDate());
     var day = Math.floor((b - a) / 86400000) + 1;
     if (day > 0) {
-      var el = document.getElementById("day-num");
-      if (el) el.textContent = day;
+      var els = document.querySelectorAll(".js-day");
+      for (var i = 0; i < els.length; i++) els[i].textContent = day;
     }
   })();
 </script>
