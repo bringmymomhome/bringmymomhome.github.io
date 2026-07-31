@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -229,6 +228,34 @@
   .btn-primary:hover { background: #F0B650; }
   .btn-ghost { border-color: var(--line-light); color: var(--mist-strong); }
   .btn-ghost:hover { border-color: var(--lamp); color: var(--lamp); }
+
+  /* ---------- In the news (coverage strip) ---------- */
+  .news-strip {
+    background: var(--night);
+    border-top: 1px solid var(--line-light);
+    padding: 2.2rem 1.5rem;
+    color: var(--mist);
+  }
+  .news-strip .eyebrow { color: var(--lamp); margin-bottom: 1.2rem; }
+  .news-list { list-style: none; display: grid; gap: 1.3rem; }
+  .news-list li { display: grid; gap: 0.2rem; justify-items: start; }
+  .news-meta {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--lamp);
+  }
+  .news-link {
+    font-family: var(--serif);
+    font-size: 1.18rem;
+    line-height: 1.4;
+    color: var(--mist-strong);
+    text-decoration-color: rgba(233, 168, 60, 0.5);
+  }
+  .news-link:hover { color: var(--lamp); }
+  .news-note { font-size: 0.85rem; opacity: 0.85; max-width: 60ch; }
 
   /* ---------- Story ---------- */
   .story-grid {
@@ -747,6 +774,7 @@
     <a class="brand" href="#top">bringmymomhome<span class="dot">.</span>com</a>
     <nav class="site-nav" aria-label="Site">
       <a href="#video">Watch</a>
+      <a href="#news">Coverage</a>
       <a href="#story">Her story</a>
       <a href="#timeline">What happened</a>
       <a href="#health">Her health</a>
@@ -786,6 +814,23 @@
         <a class="btn btn-ghost" href="#story">Read her story</a>
         <a class="btn btn-ghost" href="#press">Press &amp; interviews</a>
       </div>
+    </div>
+  </section>
+
+  <!-- ============ IN THE NEWS ============ -->
+  <!-- TO ADD NEW COVERAGE: copy an <li> block below and paste it at the
+       TOP of the list (newest first). Always link the outlet's original
+       page — never rehost broadcast video or copy article text. -->
+  <section class="news-strip" id="news" aria-labelledby="news-title">
+    <div class="wrap">
+      <p class="eyebrow" id="news-title">In the news</p>
+      <ul class="news-list">
+        <li>
+          <span class="news-meta">July 30, 2026 &middot; KTVU FOX 2, San Francisco</span>
+          <a class="news-link" href="https://www.ktvu.com/news/she-was-begging-them-daughter-fights-sunnyvale-mother-detained-ice" target="_blank" rel="noopener">&ldquo;She was begging them&rdquo;: Daughter fights for Sunnyvale mother detained by ICE</a>
+          <span class="news-note">Television report with video. ICE had not responded to KTVU's request for comment at time of publication.</span>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -853,8 +898,9 @@
             take custody of her the moment she is released.
           </p>
           <p>
-            On July 20 — at the end of a short trip to see Niagara Falls, on the U.S. side —
-            she was stopped at the Buffalo airport before her flight home to California by
+            On July 20 — at the end of a short trip to see Niagara Falls, a childhood dream
+            of hers, on the U.S. side — she was stopped at the Buffalo airport before her
+            flight home to California by
             three plain-clothes officers who called it <q>a document check.</q> No documents
             were requested. She has not been home since. She has never left the United States
             in the nearly five years since she arrived.
