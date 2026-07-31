@@ -538,6 +538,33 @@
     color: var(--slate);
   }
 
+  /* ---------- Her health ---------- */
+  .health-intro p {
+    font-family: var(--serif);
+    font-size: 1.14rem;
+    line-height: 1.7;
+    max-width: 58ch;
+  }
+  .med-ledger { max-width: 46rem; margin-top: 2.2rem; }
+  .med-ledger div {
+    grid-template-columns: 11.5rem 1fr;
+    padding: 1.05rem 0;
+  }
+  .med-ledger dt { color: #A4551E; }
+  .med-ledger dd { font-size: 0.98rem; max-width: 56ch; }
+  .health-close { margin-top: 2rem; max-width: 46rem; }
+  .health-close p {
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+  .health-close .health-source {
+    margin-top: 1.1rem;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+    color: var(--slate);
+  }
+
   /* ---------- Voices of support (carousel) ---------- */
   .voices-note {
     font-family: var(--mono);
@@ -706,7 +733,9 @@
      3. "She is sick / fever" — anchored to her latest call date.
         Update the date range each time there is a newer call.
      4. Footer "Last updated" date — bump on every deploy.
-     5. After deploying, bump the social-preview cache-buster when
+     5. HER HEALTH section: any change to a medical claim needs attorney
+        sign-off first, and must mirror her medical records exactly.
+     6. After deploying, bump the social-preview cache-buster when
         sharing (e.g. bringmymomhome.com/?v=3) so platforms re-scrape.
      ================================================================== -->
 <a class="skip-link" href="#story">Skip to her story</a>
@@ -719,6 +748,7 @@
       <a href="#story">Her story</a>
       <a href="#timeline">What happened</a>
       <a href="#words">In their words</a>
+      <a href="#health">Her health</a>
       <a href="#voices">Voices</a>
       <a href="#help">How to help</a>
       <a href="#press">Press</a>
@@ -741,7 +771,8 @@
       <p class="lede">
         Alevtina Soboleva, 59 — an asylum seeker from Sunnyvale, California, with no criminal
         record — was detained at the Buffalo airport on July&nbsp;20, boarding her flight home
-        to California, and moved through three facilities in under three days. She is sick,
+        to California, and moved through three facilities in under three days. She lives with
+        a progressive neurological disorder, is ill with an untreated fever,
         and as of July&nbsp;30 <!-- AS-OF: verify daily --> has had no confidential call with
         her attorney. For nine days her case appeared nowhere in the immigration court
         system. Her first hearing before a judge is set for August&nbsp;12 — day 24 of her
@@ -1038,12 +1069,12 @@
           </p>
         </article>
         <article class="concern">
-          <h3>Medical neglect</h3>
+          <h3>Her health</h3>
           <p>
-            She is sick with a fever and a severe sore throat and is receiving no medication.
-            Warm clothing and painkillers given to her by other detainees were confiscated by
-            staff. She is without her glasses, which she needs to read forms or use the phone
-            system.
+            She is ill and untreated — a fever and severe sore throat, with no medication —
+            while living with a progressive neurological disorder, hearing loss, and two
+            diagnosed stroke risk factors. <a href="#health">The full medical picture is
+            below.</a>
           </p>
         </article>
         <article class="concern">
@@ -1079,13 +1110,86 @@
     </div>
   </section>
 
+  <!-- ============ HER HEALTH ============ -->
+  <!-- ATTORNEY REVIEW REQUIRED before this section goes live. Every claim
+       here should mirror her California medical records exactly — DHS reads
+       this page. Sources: her records; her calls of July 24–30 as relayed
+       by her family. Do not add any condition not in the records. -->
+  <section class="band paper-band" id="health" aria-labelledby="health-title">
+    <div class="wrap">
+      <p class="eyebrow">Her health</p>
+      <h2 id="health-title">Her health, plainly stated</h2>
+      <div class="health-intro">
+        <p>
+          Her family did not plan to make her medical history public. On day
+          <span class="js-day">11</span> of her detention, they no longer feel they can keep
+          it private. What follows is stated as plainly as possible — every condition below
+          predates her detention and is documented in her medical records in California.
+        </p>
+      </div>
+      <dl class="fact-ledger med-ledger">
+        <div>
+          <dt>Cerebellar ataxia</dt>
+          <dd>
+            A progressive neurological disorder affecting balance and coordination —
+            diagnosed before her detention. Her doctors had projected that she could lose
+            the ability to walk, and be in a wheelchair, within a few years; that she was
+            still walking at all, they considered remarkable. In her calls from detention
+            she reports that she now feels too unsteady to cross a room without keeping a
+            hand on the wall.
+          </dd>
+        </div>
+        <div>
+          <dt>Stroke risk factors</dt>
+          <dd>
+            High blood pressure and high cholesterol, both diagnosed. During the July 22–23
+            transfers — restrained for hours in a small enclosure, refused water — she
+            feared she was having a stroke.
+          </dd>
+        </div>
+        <div>
+          <dt>Hearing loss, left ear</dt>
+          <dd>
+            She does not hear in her left ear and uses a prescribed hearing aid. It is not
+            with her in detention. Without it — and without her glasses — the facility's
+            phone and tablet systems are close to unusable for her, which is part of why
+            reaching her own family took days.
+          </dd>
+        </div>
+        <div>
+          <dt>Untreated illness</dt>
+          <dd>
+            A fever, severe sore throat, and headaches, reported in every call since
+            July&nbsp;24. She reports she has been given no medication, and that warm
+            clothing and medicine shared with her by other detainees were confiscated by
+            staff.
+          </dd>
+        </div>
+      </dl>
+      <div class="health-close">
+        <p>
+          Taken together: she is 59, with a progressive balance disorder that now keeps one
+          hand on the wall when she walks, an untreated fever, hearing she cannot correct
+          without her hearing aid, sight she cannot correct without her glasses, and two
+          diagnosed stroke risk factors — compounded by menopause — in a facility cold
+          enough that detainees wear layers she does not have. Her family is not asking
+          anyone to take their word for any of this. The records exist.
+        </p>
+        <p class="health-source">
+          Sources: her medical records in California; her calls of July 24–30, as relayed
+          by her family.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============ THE ASKS ============ -->
   <section class="band night-band" id="asks" aria-labelledby="asks-title">
     <div class="wrap">
       <p class="eyebrow">The family asks ICE to</p>
       <h2 id="asks-title">Five things — none of them extraordinary</h2>
       <ol class="asks">
-        <li><p>Provide immediate medical evaluation and treatment, and basic necessities: medication, warm clothing, and her glasses.</p></li>
+        <li><p>Provide immediate medical evaluation and treatment — including for her progressive neurological disorder — and her basic medical equipment: medication, warm clothing, her glasses, and her hearing aid.</p></li>
         <li><p>Ensure uninterrupted, confidential access between Ms. Soboleva and her legal counsel.</p></li>
         <li><p>Hear her bond request promptly, and keep her where she is — no further no-notice transfers before her August 12 hearing.</p></li>
         <li><p>Transfer her to California, where her attorney, family, and support network are located.</p></li>
