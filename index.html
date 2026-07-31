@@ -17,7 +17,7 @@
 <meta name="twitter:image" content="https://bringmymomhome.com/images/mom.jpg" />
 <!-- VIDEO IN LINK PREVIEWS: Discord (and some other platforms) will show a playable
      player instead of just the photo. If the video ever changes, update the ID in
-     these four lines AND in YOUTUBE_URL in the Watch section below. -->
+     these four lines AND in the VIDEOS list in the Watch section below. -->
 <meta property="og:video" content="https://www.youtube.com/embed/JlK2a6yv--Y" />
 <meta property="og:video:secure_url" content="https://www.youtube.com/embed/JlK2a6yv--Y" />
 <meta property="og:video:type" content="text/html" />
@@ -544,26 +544,29 @@
     text-transform: uppercase;
     color: var(--slate);
   }
-  .video-minis {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.3rem;
-    margin-top: 1.3rem;
-  }
-  .video-mini {
-    aspect-ratio: 16 / 9;
-    border: 1.5px dashed var(--line-ink);
-    border-radius: 10px;
+  .video-picker {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 1rem;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
+  }
+  .video-chip {
     font-family: var(--mono);
-    font-size: 0.72rem;
+    font-size: 0.76rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: var(--slate);
+    color: var(--ink);
+    background: transparent;
+    border: 1px solid var(--line-ink);
+    border-radius: 999px;
+    padding: 0.6rem 1.1rem;
+    cursor: pointer;
+  }
+  .video-chip:hover { border-color: var(--lamp); }
+  .video-chip[aria-current="true"] {
+    background: var(--ink);
+    color: var(--paper);
+    border-color: var(--ink);
   }
 
   /* ---------- Her health ---------- */
@@ -743,7 +746,7 @@
 
   /* ---------- Responsive ---------- */
   @media (max-width: 760px) {
-    .story-grid, .concern-grid, .help-grid, .video-minis { grid-template-columns: 1fr; }
+    .story-grid, .concern-grid, .help-grid { grid-template-columns: 1fr; }
     .pair { grid-template-columns: 1fr; gap: 1rem; }
     .photo-fig { max-width: 22rem; }
     .fact-ledger div { grid-template-columns: 1fr; gap: 0.15rem; }
@@ -826,6 +829,11 @@
       <p class="eyebrow" id="news-title">In the news</p>
       <ul class="news-list">
         <li>
+          <span class="news-meta">July 31, 2026 &middot; Local News Matters &middot; Bay City News</span>
+          <a class="news-link" href="https://localnewsmatters.org/2026/07/31/sunnyvale-woman-detained-ice-louisiana/" target="_blank" rel="noopener">59-year-old Sunnyvale woman detained by ICE at Buffalo airport in New York</a>
+          <span class="news-note">Print report by Bay City News, the Bay Area's regional news wire.</span>
+        </li>
+        <li>
           <span class="news-meta">July 30, 2026 &middot; KTVU FOX 2, San Francisco</span>
           <a class="news-link" href="https://www.ktvu.com/news/she-was-begging-them-daughter-fights-sunnyvale-mother-detained-ice" target="_blank" rel="noopener">&ldquo;She was begging them&rdquo;: Daughter fights for Sunnyvale mother detained by ICE</a>
           <span class="news-note">Television report with video. ICE had not responded to KTVU's request for comment at time of publication.</span>
@@ -842,18 +850,32 @@
 
       <script>
         /* ==============================================================
-           ▼▼▼  PASTE THE YOUTUBE LINK BETWEEN THE QUOTES BELOW  ▼▼▼
+           ▼▼▼  THE VIDEO LIST — ADD OR REORDER VIDEOS HERE  ▼▼▼
 
-           Any of these formats work:
+           Each line is one video: a YouTube link and a short label for
+           its selector chip. The FIRST video in the list plays by
+           default. Any of these link formats work:
              https://www.youtube.com/watch?v=XXXXXXXXXXX
              https://youtu.be/XXXXXXXXXXX
 
-           Example:  var YOUTUBE_URL = "https://youtu.be/dQw4w9WgXcQ";
-
-           Leave it empty ("") to keep showing the coming-soon box.
-           This is the ONLY line to edit when the video is posted.
+           Only embed videos from official channels (the campaign's own,
+           or the outlet's verified channel) — never re-uploads of
+           broadcast footage.
            ============================================================== */
-        var YOUTUBE_URL = "https://youtu.be/JlK2a6yv--Y";
+        var VIDEOS = [
+          {
+            /* CONFIRM before deploy: verify this video's title and that
+               it is on KTVU's official channel (not a re-upload). Edit
+               the label to match what it actually is. Now the DEFAULT
+               video, so this check matters even more. */
+            url: "https://www.youtube.com/watch?v=OV_VtnHJ26w",
+            label: "KTVU FOX 2 report"
+          },
+          {
+            url: "https://youtu.be/JlK2a6yv--Y",
+            label: "The full interview"
+          }
+        ];
       </script>
 
       <div class="video-slot" id="video-frame">
@@ -865,10 +887,14 @@
         <span class="v-title">First interview with Daria Soboleva</span>
         <span class="v-note">Coming soon — this space is reserved</span>
       </div>
-      <div class="video-minis">
-        <div class="video-mini">Reserved &middot; statement from legal counsel</div>
-        <div class="video-mini">Reserved &middot; voices from her community</div>
-      </div>
+      <div class="video-picker" id="video-picker" hidden></div>
+      <noscript>
+        <p class="v-note" style="margin-top:1.2rem">
+          Watch on YouTube:
+          <a href="https://www.youtube.com/watch?v=OV_VtnHJ26w">KTVU FOX 2 report</a> &middot;
+          <a href="https://youtu.be/JlK2a6yv--Y">the full interview</a>
+        </p>
+      </noscript>
     </div>
   </section>
 
@@ -1355,7 +1381,7 @@
   <div class="wrap">
     <p>
       Maintained by the family of Alevtina Soboleva (A-Number A240031600).<br />
-      Last updated July 30, 2026.
+      Last updated July 31, 2026.
     </p>
     <p>
       <a href="#story">Her story</a> &middot; <a href="#timeline">What happened</a> &middot;
@@ -1429,23 +1455,54 @@
     start();
   })();
 
-  // YouTube embed — reads YOUTUBE_URL from the Watch section above.
-  // When a link is pasted there, the coming-soon box is replaced by a
-  // full-width YouTube player showing the video's large thumbnail.
+  // Video carousel — reads the VIDEOS list from the Watch section above.
+  // Builds the player from the first video and a chip selector to switch
+  // between videos. Swapping the source stops the previous video.
   (function () {
-    if (typeof YOUTUBE_URL === "undefined" || !YOUTUBE_URL) return;
-    var m = YOUTUBE_URL.match(/(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
-    if (!m) return;
+    if (typeof VIDEOS === "undefined" || !VIDEOS || !VIDEOS.length) return;
+    var ID_RE = /(?:youtube\.com\/(?:watch\?(?:.*&)?v=|embed\/|shorts\/|live\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/;
+    var list = [];
+    for (var i = 0; i < VIDEOS.length; i++) {
+      var m = (VIDEOS[i].url || "").match(ID_RE);
+      if (m) list.push({ id: m[1], label: VIDEOS[i].label || "Video " + (list.length + 1) });
+    }
+    if (!list.length) return;
+
     var slot = document.getElementById("video-frame");
     if (!slot) return;
     var frame = document.createElement("iframe");
     frame.className = "video-embed";
-    frame.src = "https://www.youtube-nocookie.com/embed/" + m[1];
-    frame.title = "First interview with Daria Soboleva";
+    frame.title = list[0].label + " — Bring My Mom Home";
+    frame.src = "https://www.youtube-nocookie.com/embed/" + list[0].id;
     frame.setAttribute("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share");
     frame.setAttribute("allowfullscreen", "");
     frame.loading = "lazy";
     slot.replaceWith(frame);
+
+    if (list.length < 2) return;
+    var picker = document.getElementById("video-picker");
+    if (!picker) return;
+    var current = 0;
+    function select(n) {
+      if (n === current) return;
+      picker.children[current].removeAttribute("aria-current");
+      current = n;
+      frame.title = list[n].label + " — Bring My Mom Home";
+      frame.src = "https://www.youtube-nocookie.com/embed/" + list[n].id;
+      picker.children[n].setAttribute("aria-current", "true");
+    }
+    for (var j = 0; j < list.length; j++) {
+      (function (j) {
+        var chip = document.createElement("button");
+        chip.type = "button";
+        chip.className = "video-chip";
+        chip.textContent = list[j].label;
+        if (j === 0) chip.setAttribute("aria-current", "true");
+        chip.addEventListener("click", function () { select(j); });
+        picker.appendChild(chip);
+      })(j);
+    }
+    picker.hidden = false;
   })();
 </script>
 </body>
