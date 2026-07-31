@@ -445,6 +445,11 @@
   }
   .concern p { font-size: 0.95rem; }
   .concern p q { font-style: italic; }
+  .concern-wide {
+    grid-column: 1 / -1;
+    border-left: 3px solid var(--lamp);
+  }
+  .concern-wide p { max-width: 68ch; }
   .band-tint { background: var(--paper-deep); }
 
   /* ---------- Asks ---------- */
@@ -533,6 +538,89 @@
     color: var(--slate);
   }
 
+  /* ---------- Voices of support (carousel) ---------- */
+  .voices-note {
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.06em;
+    color: var(--slate);
+  }
+  .voices-carousel {
+    max-width: 46rem;
+    margin: 2.4rem auto 0;
+    text-align: center;
+  }
+  .voices-track { display: grid; gap: 2.5rem; }
+  .voice-slide { margin: 0; }
+  .voice-slide blockquote {
+    font-family: var(--serif);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(1.25rem, 2.6vw, 1.55rem);
+    line-height: 1.5;
+  }
+  .voice-slide figcaption {
+    margin-top: 1.1rem;
+    font-family: var(--mono);
+    font-size: 0.74rem;
+    letter-spacing: 0.08em;
+    color: var(--slate);
+  }
+  /* Once JS is ready, slides stack in one cell and cross-fade.
+     Without JS, all letters simply display in a column. */
+  .voices-carousel.is-ready .voices-track {
+    grid-template-areas: "s";
+    gap: 0;
+    align-items: center;
+  }
+  .voices-carousel.is-ready .voice-slide {
+    grid-area: s;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.6s ease, visibility 0.6s;
+  }
+  .voices-carousel.is-ready .voice-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+  .voices-nav {
+    display: none;
+    margin-top: 2rem;
+    align-items: center;
+    justify-content: center;
+    gap: 1.1rem;
+  }
+  .voices-carousel.is-ready .voices-nav { display: flex; }
+  .voice-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid var(--line-ink);
+    background: transparent;
+    color: var(--ink);
+    font-family: var(--serif);
+    font-size: 1.35rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .voice-btn:hover { border-color: var(--lamp); }
+  .voice-dots { display: flex; gap: 0.55rem; }
+  .voice-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 1px solid var(--slate);
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+  }
+  .voice-dot[aria-current="true"] {
+    background: var(--lamp);
+    border-color: var(--lamp);
+    box-shadow: 0 0 8px 1px rgba(233, 168, 60, 0.5);
+  }
+  .voices-cta { text-align: center; margin-top: 2.4rem; }
+
   /* ---------- Help & press ---------- */
   .help-grid {
     display: grid;
@@ -608,6 +696,19 @@
 </style>
 </head>
 <body>
+<!-- ==================================================================
+     MAINTENANCE — CHECK BEFORE EVERY DEPLOY (critics watch the docket)
+     1. ACIS docket (acis.eoir.justice.gov, A240031600): check DAILY.
+        Any change (hearing date, new filings) must appear here first.
+     2. "no confidential call with her attorney" — dated "as of" below.
+        The moment a confidential call happens, convert to past tense:
+        "went her first N days without…". Search this file for AS-OF.
+     3. "She is sick / fever" — anchored to her latest call date.
+        Update the date range each time there is a newer call.
+     4. Footer "Last updated" date — bump on every deploy.
+     5. After deploying, bump the social-preview cache-buster when
+        sharing (e.g. bringmymomhome.com/?v=3) so platforms re-scrape.
+     ================================================================== -->
 <a class="skip-link" href="#story">Skip to her story</a>
 
 <header class="site-head">
@@ -618,6 +719,7 @@
       <a href="#story">Her story</a>
       <a href="#timeline">What happened</a>
       <a href="#words">In their words</a>
+      <a href="#voices">Voices</a>
       <a href="#help">How to help</a>
       <a href="#press">Press</a>
     </nav>
@@ -638,9 +740,10 @@
       <h1 id="hero-title">My mother did everything right.<br /><em>Bring her home.</em></h1>
       <p class="lede">
         Alevtina Soboleva, 59 — an asylum seeker from Sunnyvale, California, with no criminal
-        record — was detained at the Buffalo airport on July&nbsp;20 and moved through three
-        facilities in under three days. She is sick, has had no confidential call with her
-        attorney, and for more than a week her case appeared nowhere in the immigration court
+        record — was detained at the Buffalo airport on July&nbsp;20, boarding her flight home
+        to California, and moved through three facilities in under three days. She is sick,
+        and as of July&nbsp;30 <!-- AS-OF: verify daily --> has had no confidential call with
+        her attorney. For nine days her case appeared nowhere in the immigration court
         system. Her first hearing before a judge is set for August&nbsp;12 — day 24 of her
         detention.
       </p>
@@ -716,9 +819,11 @@
             take custody of her the moment she is released.
           </p>
           <p>
-            On July 20, she was stopped at the Buffalo airport before her flight home by three
-            plain-clothes officers who called it <q>a document check.</q> No documents were
-            requested. She has not been home since.
+            On July 20 — at the end of a short trip to see Niagara Falls, on the U.S. side —
+            she was stopped at the Buffalo airport before her flight home to California by
+            three plain-clothes officers who called it <q>a document check.</q> No documents
+            were requested. She has not been home since. She has never left the United States
+            in the nearly five years since she arrived.
           </p>
         </div>
         <aside>
@@ -734,6 +839,9 @@
             <div><dt>Identification</dt><dd>California REAL ID driver's license</dd></div>
             <div><dt>Student</dt><dd>Mission College ESL, Santa Clara, since 2023</dd></div>
             <div><dt>Criminal record</dt><dd>None — no arrests, charges, or convictions</dd></div>
+            <div><dt>Travel</dt><dd>Domestic only — she has not left the U.S. since arriving in October 2021</dd></div>
+            <div><dt>Court docket</dt><dd>Case entered July 29, 2026 — nine days after her detention</dd></div>
+            <div><dt>First hearing</dt><dd>August 12, 2026 — day 24 of her detention</dd></div>
           </dl>
         </aside>
       </div>
@@ -750,7 +858,8 @@
           <span class="t-date">July 20</span>
           <span class="t-place">Buffalo, New York</span>
           <p class="t-text">
-            Detained at the airport before her flight home by three plain-clothes officers who
+            Returning to California from a short domestic trip to Niagara Falls, she is
+            detained at the airport before her flight home by three plain-clothes officers who
             called it <q>a document check.</q> No documents were requested. The family was told
             she would stay in Buffalo <q>a couple of days</q> and could then transfer to
             California — that there would be no handcuffs, and that mother and daughter would
@@ -798,8 +907,8 @@
           <span class="t-place">First video contact</span>
           <p class="t-text">
             She is visibly ill — a fever with no medication, no warm clothing against the
-            facility's cold, and no glasses, which she needs to read forms or use the phone
-            system.
+            facility's heavy industrial air conditioning, and no glasses, which she needs to
+            read forms or use the phone system.
           </p>
         </li>
         <li>
@@ -811,14 +920,23 @@
             confidential call with her attorney.
           </p>
         </li>
+        <li>
+          <span class="t-date">July 29</span>
+          <span class="t-place">On the docket at last</span>
+          <p class="t-text">
+            Nine days after her detention, her case is entered into the immigration court
+            system — the first day her attorney could ask a judge for anything on her behalf.
+            For those nine days she could be held, moved, and staged for removal, but could
+            not request release.
+          </p>
+        </li>
         <li class="upcoming">
           <span class="t-date">August 12 &middot; Scheduled</span>
           <span class="t-place">Her first hearing</span>
           <p class="t-text">
-            Her case now appears in the immigration court system. On August 12 — day 24 of her
-            detention — she is scheduled to stand before an immigration judge for the first
-            time, at an initial hearing where the government's charges against her will be
-            read.
+            On August 12 — day 24 of her detention — she is scheduled to stand before an
+            immigration judge for the first time, at an initial hearing where the
+            government's charges against her will be read.
           </p>
         </li>
         <li class="home">
@@ -931,17 +1049,30 @@
         <article class="concern">
           <h3>No attorney access</h3>
           <p>
-            Six days into her detention, she has had no confidential consultation with her
-            legal counsel.
+            As of July 30 <!-- AS-OF: verify daily -->, eleven days into her detention, she
+            has had no confidential consultation with her legal counsel — only monitored,
+            recorded channels.
           </p>
         </article>
         <article class="concern">
           <h3>Locked out of court</h3>
           <p>
-            For more than a week, her case appeared nowhere in the immigration court system,
+            For nine days, her case appeared nowhere in the immigration court system,
             making a bond request impossible to file. It has now been entered, with a first
             hearing set for August 12 — while the risk of another no-notice transfer, and of
             deportation to Russia, the very danger underlying her asylum claim, remains.
+          </p>
+        </article>
+        <article class="concern concern-wide">
+          <h3>Why return is not an option</h3>
+          <p>
+            Deportation would send a 59-year-old woman, alone, back to a country at war —
+            one where criticizing that war is now a crime, and where having sought political
+            asylum in the United States is itself viewed by the authorities with hostility.
+            Everyone she has — her daughter, her family, her community, everyone who could
+            care for her — is in California. The specific basis of her asylum claim is
+            before USCIS and is deliberately not detailed on this page, to protect her case
+            and the people connected to it.
           </p>
         </article>
       </div>
@@ -963,6 +1094,57 @@
     </div>
   </section>
 
+  <!-- ============ VOICES OF SUPPORT ============ -->
+  <!-- Excerpts from real messages sent to outreach@. Partial quotes only,
+       lightly cleaned for readability, no names, no identifying details.
+       TO ADD A NEW QUOTE: copy a <figure class="voice-slide"> block below
+       (without the is-active class) and paste it before </div> of
+       .voices-track. The dots and rotation update automatically. -->
+  <section class="band paper-band band-tint" id="voices" aria-labelledby="voices-title">
+    <div class="wrap">
+      <p class="eyebrow">From her community</p>
+      <h2 id="voices-title">The letters have started arriving</h2>
+      <p class="voices-note">Excerpts from messages sent to the family. Names withheld.</p>
+      <div class="voices-carousel" role="region" aria-roledescription="carousel" aria-label="Letters of support">
+        <div class="voices-track">
+          <figure class="voice-slide is-active">
+            <blockquote>&ldquo;She always comes early &hellip; sometimes we do warm-ups and
+              practice rallying before class starts. She&rsquo;s very smart, and she would
+              always try to help me get better at the game.&rdquo;</blockquote>
+            <figcaption>— A classmate from her badminton class at Mission College</figcaption>
+          </figure>
+          <figure class="voice-slide">
+            <blockquote>&ldquo;I was going to invite her to play with us outside of class.
+              By the time I had that idea, she stopped showing up. I just kept thinking,
+              I&rsquo;ll ask her next time &hellip; May my deepest wishes and hopes reach
+              her.&rdquo;</blockquote>
+            <figcaption>— A classmate from her badminton class at Mission College</figcaption>
+          </figure>
+          <figure class="voice-slide">
+            <blockquote>&ldquo;Although I did not meet her, a friend told me about her
+              &hellip; We wish for her to be transferred back here, where she
+              lives.&rdquo;</blockquote>
+            <figcaption>— A Mission College student</figcaption>
+          </figure>
+          <figure class="voice-slide">
+            <blockquote>&ldquo;I would like to do something for Alevtina. I know it is not
+              something our parents want us to do — to stand up to the government &hellip;
+              but what is happening is wrong.&rdquo;</blockquote>
+            <figcaption>— A member of the local Russian-speaking community</figcaption>
+          </figure>
+        </div>
+        <div class="voices-nav">
+          <button class="voice-btn" type="button" data-dir="-1" aria-label="Previous letter">&#8249;</button>
+          <div class="voice-dots" aria-label="Choose a letter"></div>
+          <button class="voice-btn" type="button" data-dir="1" aria-label="Next letter">&#8250;</button>
+        </div>
+      </div>
+      <p class="voices-cta">
+        <a class="btn btn-ink" href="mailto:outreach@bringmymomhome.com?subject=Support%20for%20Alevtina%20Soboleva">Add your voice</a>
+      </p>
+    </div>
+  </section>
+
   <!-- ============ HOW TO HELP / PRESS ============ -->
   <section class="band paper-band" id="help" aria-labelledby="help-title">
     <div class="wrap">
@@ -980,7 +1162,7 @@
             <a href="mailto:outreach@bringmymomhome.com?subject=Support%20for%20Alevtina%20Soboleva">outreach@bringmymomhome.com</a>
           </p>
           <a class="btn btn-ink" href="mailto:outreach@bringmymomhome.com?subject=Support%20for%20Alevtina%20Soboleva">Send a letter of support</a>
-          <p class="fineprint">Letters are collected by her family and shared with her legal team.</p>
+          <p class="fineprint">Letters are collected by her family and shared with her legal team. Short excerpts may be shared on this page — always anonymously, never with names. Tell us if you'd rather your words stay private.</p>
         </div>
         <div class="help-card help-press" id="press">
           <h3>For press</h3>
@@ -1008,7 +1190,7 @@
   <div class="wrap">
     <p>
       Maintained by the family of Alevtina Soboleva (A-Number A240031600).<br />
-      Last updated July 29, 2026.
+      Last updated July 30, 2026.
     </p>
     <p>
       <a href="#story">Her story</a> &middot; <a href="#timeline">What happened</a> &middot;
@@ -1031,6 +1213,55 @@
       var els = document.querySelectorAll(".js-day");
       for (var i = 0; i < els.length; i++) els[i].textContent = day;
     }
+  })();
+
+  // Voices carousel — rotates the letters of support. Pauses on hover or
+  // keyboard focus; does not auto-rotate for users who prefer reduced motion.
+  (function () {
+    var carousel = document.querySelector(".voices-carousel");
+    if (!carousel) return;
+    var slides = carousel.querySelectorAll(".voice-slide");
+    if (slides.length < 2) return;
+    var dotsWrap = carousel.querySelector(".voice-dots");
+    var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var idx = 0, timer = null;
+
+    carousel.classList.add("is-ready");
+    if (reduced) carousel.querySelector(".voices-track").setAttribute("aria-live", "polite");
+
+    function go(n) {
+      slides[idx].classList.remove("is-active");
+      if (dotsWrap.children[idx]) dotsWrap.children[idx].removeAttribute("aria-current");
+      idx = ((n % slides.length) + slides.length) % slides.length;
+      slides[idx].classList.add("is-active");
+      if (dotsWrap.children[idx]) dotsWrap.children[idx].setAttribute("aria-current", "true");
+    }
+    for (var i = 0; i < slides.length; i++) {
+      (function (i) {
+        var d = document.createElement("button");
+        d.className = "voice-dot";
+        d.type = "button";
+        d.setAttribute("aria-label", "Letter " + (i + 1) + " of " + slides.length);
+        if (i === 0) d.setAttribute("aria-current", "true");
+        d.addEventListener("click", function () { go(i); restart(); });
+        dotsWrap.appendChild(d);
+      })(i);
+    }
+    var btns = carousel.querySelectorAll(".voice-btn");
+    for (var b = 0; b < btns.length; b++) {
+      btns[b].addEventListener("click", function () {
+        go(idx + parseInt(this.getAttribute("data-dir"), 10));
+        restart();
+      });
+    }
+    function stop() { if (timer) { clearInterval(timer); timer = null; } }
+    function start() { if (!reduced && !timer) timer = setInterval(function () { go(idx + 1); }, 8000); }
+    function restart() { stop(); start(); }
+    carousel.addEventListener("mouseenter", stop);
+    carousel.addEventListener("mouseleave", start);
+    carousel.addEventListener("focusin", stop);
+    carousel.addEventListener("focusout", start);
+    start();
   })();
 
   // YouTube embed — reads YOUTUBE_URL from the Watch section above.
