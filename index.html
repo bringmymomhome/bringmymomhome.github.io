@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -727,9 +728,10 @@
      MAINTENANCE — CHECK BEFORE EVERY DEPLOY (critics watch the docket)
      1. ACIS docket (acis.eoir.justice.gov, A240031600): check DAILY.
         Any change (hearing date, new filings) must appear here first.
-     2. "no confidential call with her attorney" — dated "as of" below.
-        The moment a confidential call happens, convert to past tense:
-        "went her first N days without…". Search this file for AS-OF.
+     2. LIVE CLAIM: "no confidential attorney consultation yet." Her only
+        attorney call so far was on the recorded facility tablet line.
+        The moment a true confidential legal call or in-person visit
+        happens, convert to past tense. Search this file for AS-OF.
      3. "She is sick / fever" — anchored to her latest call date.
         Update the date range each time there is a newer call.
      4. Footer "Last updated" date — bump on every deploy.
@@ -747,8 +749,8 @@
       <a href="#video">Watch</a>
       <a href="#story">Her story</a>
       <a href="#timeline">What happened</a>
-      <a href="#words">In their words</a>
       <a href="#health">Her health</a>
+      <a href="#words">In their words</a>
       <a href="#voices">Voices</a>
       <a href="#help">How to help</a>
       <a href="#press">Press</a>
@@ -772,9 +774,10 @@
         Alevtina Soboleva, 59 — an asylum seeker from Sunnyvale, California, with no criminal
         record — was detained at the Buffalo airport on July&nbsp;20, boarding her flight home
         to California, and moved through three facilities in under three days. She lives with
-        a progressive neurological disorder, is ill with an untreated fever,
-        and as of July&nbsp;30 <!-- AS-OF: verify daily --> has had no confidential call with
-        her attorney. For nine days her case appeared nowhere in the immigration court
+        a progressive neurological disorder and is ill with an untreated fever; her first
+        call with her attorney came only in her second week — on the facility's recorded
+        line, never yet a confidential one. <!-- AS-OF: live claim, verify --> For nine
+        days her case appeared nowhere in the immigration court
         system. Her first hearing before a judge is set for August&nbsp;12 — day 24 of her
         detention.
       </p>
@@ -961,6 +964,15 @@
             not request release.
           </p>
         </li>
+        <li>
+          <span class="t-date">July 30</span><!-- CONFIRM exact date of the first attorney call before deploy -->
+          <span class="t-place">First call with her attorney</span>
+          <p class="t-text">
+            Ten days after the airport, her first phone conversation with her legal counsel
+            since her detention — placed on the facility's standard recorded tablet line,
+            not a confidential legal call.
+          </p>
+        </li>
         <li class="upcoming">
           <span class="t-date">August 12 &middot; Scheduled</span>
           <span class="t-place">Her first hearing</span>
@@ -976,6 +988,79 @@
           <p class="t-text"><em>Not yet.</em></p>
         </li>
       </ol>
+    </div>
+  </section>
+
+  <!-- ============ HER HEALTH ============ -->
+  <!-- ATTORNEY REVIEW REQUIRED before this section goes live. Every claim
+       here should mirror her California medical records exactly — DHS reads
+       this page. Sources: her records; her calls of July 24–30 as relayed
+       by her family. Do not add any condition not in the records. -->
+  <section class="band paper-band band-tint" id="health" aria-labelledby="health-title">
+    <div class="wrap">
+      <p class="eyebrow">Her health</p>
+      <h2 id="health-title">Her health, plainly stated</h2>
+      <div class="health-intro">
+        <p>
+          Her family did not plan to make her medical history public. On day
+          <span class="js-day">11</span> of her detention, they no longer feel they can keep
+          it private. What follows is stated as plainly as possible — every condition below
+          predates her detention and is documented in her medical records in California.
+        </p>
+      </div>
+      <dl class="fact-ledger med-ledger">
+        <div>
+          <dt>Cerebellar ataxia</dt>
+          <dd>
+            A progressive neurological disorder affecting balance and coordination —
+            diagnosed before her detention. Her doctors had projected that she could lose
+            the ability to walk, and be in a wheelchair, within a few years; that she was
+            still walking at all, they considered remarkable. In her calls from detention
+            she reports that she now feels too unsteady to cross a room without keeping a
+            hand on the wall.
+          </dd>
+        </div>
+        <div>
+          <dt>Stroke risk factors</dt>
+          <dd>
+            High blood pressure and high cholesterol, both diagnosed. During the July 22–23
+            transfers — restrained for hours in a small enclosure, refused water — she
+            feared she was having a stroke.
+          </dd>
+        </div>
+        <div>
+          <dt>Hearing loss, left ear</dt>
+          <dd>
+            She does not hear in her left ear and uses a prescribed hearing aid. It is not
+            with her in detention. Without it — and without her glasses — the facility's
+            phone and tablet systems are close to unusable for her, which is part of why
+            reaching her own family took days.
+          </dd>
+        </div>
+        <div>
+          <dt>Untreated illness</dt>
+          <dd>
+            A fever, severe sore throat, and headaches, reported in every call since
+            July&nbsp;24. She reports she has been given no medication, and that warm
+            clothing and medicine shared with her by other detainees were confiscated by
+            staff.
+          </dd>
+        </div>
+      </dl>
+      <div class="health-close">
+        <p>
+          Taken together: she is 59, with a progressive balance disorder that now keeps one
+          hand on the wall when she walks, an untreated fever, hearing she cannot correct
+          without her hearing aid, sight she cannot correct without her glasses, and two
+          diagnosed stroke risk factors — compounded by menopause — in a facility cold
+          enough that detainees wear layers she does not have. Her family is not asking
+          anyone to take their word for any of this. The records exist.
+        </p>
+        <p class="health-source">
+          Sources: her medical records in California; her calls of July 24–30, as relayed
+          by her family.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -1074,15 +1159,18 @@
             She is ill and untreated — a fever and severe sore throat, with no medication —
             while living with a progressive neurological disorder, hearing loss, and two
             diagnosed stroke risk factors. <a href="#health">The full medical picture is
-            below.</a>
+            above.</a>
           </p>
         </article>
         <article class="concern">
-          <h3>No attorney access</h3>
+          <h3>No confidential attorney access</h3>
           <p>
-            As of July 30 <!-- AS-OF: verify daily -->, eleven days into her detention, she
-            has had no confidential consultation with her legal counsel — only monitored,
-            recorded channels.
+            Her first call with her legal counsel came only in her second week of custody —
+            on the facility's recorded tablet system, the same line used for every other
+            call. As of July 30 <!-- AS-OF: verify daily --> she has had no confidential
+            attorney-client consultation. Her attorney is in California, roughly 2,000
+            miles from the Louisiana facility where she is held; her initial hearing is
+            August 12.
           </p>
         </article>
         <article class="concern">
@@ -1106,79 +1194,6 @@
             and the people connected to it.
           </p>
         </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ HER HEALTH ============ -->
-  <!-- ATTORNEY REVIEW REQUIRED before this section goes live. Every claim
-       here should mirror her California medical records exactly — DHS reads
-       this page. Sources: her records; her calls of July 24–30 as relayed
-       by her family. Do not add any condition not in the records. -->
-  <section class="band paper-band" id="health" aria-labelledby="health-title">
-    <div class="wrap">
-      <p class="eyebrow">Her health</p>
-      <h2 id="health-title">Her health, plainly stated</h2>
-      <div class="health-intro">
-        <p>
-          Her family did not plan to make her medical history public. On day
-          <span class="js-day">11</span> of her detention, they no longer feel they can keep
-          it private. What follows is stated as plainly as possible — every condition below
-          predates her detention and is documented in her medical records in California.
-        </p>
-      </div>
-      <dl class="fact-ledger med-ledger">
-        <div>
-          <dt>Cerebellar ataxia</dt>
-          <dd>
-            A progressive neurological disorder affecting balance and coordination —
-            diagnosed before her detention. Her doctors had projected that she could lose
-            the ability to walk, and be in a wheelchair, within a few years; that she was
-            still walking at all, they considered remarkable. In her calls from detention
-            she reports that she now feels too unsteady to cross a room without keeping a
-            hand on the wall.
-          </dd>
-        </div>
-        <div>
-          <dt>Stroke risk factors</dt>
-          <dd>
-            High blood pressure and high cholesterol, both diagnosed. During the July 22–23
-            transfers — restrained for hours in a small enclosure, refused water — she
-            feared she was having a stroke.
-          </dd>
-        </div>
-        <div>
-          <dt>Hearing loss, left ear</dt>
-          <dd>
-            She does not hear in her left ear and uses a prescribed hearing aid. It is not
-            with her in detention. Without it — and without her glasses — the facility's
-            phone and tablet systems are close to unusable for her, which is part of why
-            reaching her own family took days.
-          </dd>
-        </div>
-        <div>
-          <dt>Untreated illness</dt>
-          <dd>
-            A fever, severe sore throat, and headaches, reported in every call since
-            July&nbsp;24. She reports she has been given no medication, and that warm
-            clothing and medicine shared with her by other detainees were confiscated by
-            staff.
-          </dd>
-        </div>
-      </dl>
-      <div class="health-close">
-        <p>
-          Taken together: she is 59, with a progressive balance disorder that now keeps one
-          hand on the wall when she walks, an untreated fever, hearing she cannot correct
-          without her hearing aid, sight she cannot correct without her glasses, and two
-          diagnosed stroke risk factors — compounded by menopause — in a facility cold
-          enough that detainees wear layers she does not have. Her family is not asking
-          anyone to take their word for any of this. The records exist.
-        </p>
-        <p class="health-source">
-          Sources: her medical records in California; her calls of July 24–30, as relayed
-          by her family.
-        </p>
       </div>
     </div>
   </section>
